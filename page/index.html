@@ -22,7 +22,7 @@
         name=""
         id=""
         cols="10"
-        rows="2"
+        rows="5"
         placeholder="Ingrese el texto aquí"
       ></textarea>
       <span class="alert__container"> <img class="alert-ico" src="../assets/alert-ico.png" alt="alert"> Solo letras minusculas sin acentos</span>
@@ -31,10 +31,11 @@
         <button class="app__action app__action--decrypt"><h3 class="app__action-text">Desencriptar</h3></button></button>
       </div>
       <div class="app__output">
-        <h3 class="app__output-title">Ningún texto fue encontrado</h3>
-        <p class="app__output-paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
+        <h3 class="app__output-title ">Ningún texto fue encontrado</h3>
+        <p class="app__output-paragraph ">Ingresa el texto que desees encriptar o desencriptar.</p>
+        <textarea class="app__output-text hidden-output" cols="5" rows="2"></textarea>
+        <button class="app__output-copy-button hidden-output">Copiar</button>
       </div>
-      <textarea class="app__output-text hidden-output" cols="" rows="10"></textarea>
     </div>
   </body>
 </html>
