@@ -157,3 +157,91 @@
 .hidden-output {
   display: none;
 }
+
+/*tablet design*/
+@media (min-width: 768px) {
+  .app__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light-color);
+  }
+  .app__title {
+    font-size: 3rem;
+    margin: 0;
+    width: 50%;
+  }
+  .app__input-text {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 30px auto;
+    font-size: 2rem;
+  }
+  .app__input-text::placeholder {
+    font-size: 2rem;
+  }
+  .app__actions {
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .app__action {
+    width: 100%;
+    height: 50px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+  .app__action--encrypt {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+  }
+  .app__action--decrypt {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: solid 3px var(--primary-color);
+  }
+  .app__action-text {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .app__output {
+    width: 100%;
+    height: 20%;
+    margin: 0;
+  }
+  .app__output-title {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .app__output-paragraph {
+    font-size: 1rem;
+    color: var(--middle-color);
+    margin-bottom: 1rem;
+  }
+  .app__output-text {
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+  }
+  .app__output-copy-button {
+    font-size: 2rem;
+    color: var(--primary-color);
+    width: 100%;
+    border-radius: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    border: solid 3px var(--primary-color);
+    background-color: #ffffff;
+    outline: none;
+  }
+}
