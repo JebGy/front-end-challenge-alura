@@ -31,9 +31,11 @@
         <button class="app__action app__action--decrypt" id="desencriptar"><h3 class="app__action-text">Desencriptar</h3></button></button>
       </div>
       <div class="app__output">
-        <img class="output-items app__output-image" src="../assets/Muñeco.png" alt="muñeco">
-        <h3 class="output-items app__output-title">Ningún texto fue encontrado</h3>
-        <p class="output-items app__output-paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
+        <div id="output-items">
+          <img class=" app__output-image" src="../assets/Muñeco.png" alt="muñeco">
+          <h3 class=" app__output-title">Ningún texto fue encontrado</h3>
+          <p class=" app__output-paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
         <textarea id="output" class="app__output-text hidden-output" cols="5" rows="2"></textarea>
         <button id="copiar" class="app__output-copy-button hidden-output">Copiar</button>
       </div>

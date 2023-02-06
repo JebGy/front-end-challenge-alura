@@ -1,7 +1,7 @@
 const input = document.getElementById("input");
 const output = document.getElementById("output");
-const outputItems = document.getElementsBy
-const btnCopiar= document.getElementById("copiar");
+const outputItems = document.getElementById("output-items");
+const btnCopiar = document.getElementById("copiar");
 const btnEncriptar = document.getElementById("encriptar");
 const btnDesencriptar = document.getElementById("desencriptar");
 
@@ -12,6 +12,8 @@ const validarInput = (input) => {
   } else {
     output.classList.toggle("hidden-output");
     btnCopiar.classList.toggle("hidden-output");
+    outputItems.classList.toggle("hidden-output");
+    console.log(outputItems)
     return input;
   }
 };
@@ -88,5 +90,16 @@ const descriptador = (input) => {
 
 btnEncriptar.addEventListener("click", () => {
   let value = encriptador(validarInput(input.value));
-  console.log(value);
+  output.value = value;
+  
+});
+
+btnDesencriptar.addEventListener("click", () => {
+  let value = descriptador(validarInput(input.value));
+  output.value = value;
+});
+
+btnCopiar.addEventListener("click", () => {
+  output.select();
+  document.execCommand("copy");
 });
