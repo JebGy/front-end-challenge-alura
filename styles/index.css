@@ -75,14 +75,14 @@
 }
 
 .app__action {
-    margin: 20px auto;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    border-radius: 32px;
-    box-sizing: border-box;
-    padding: 30px;
-    cursor: pointer;
+  margin: 20px auto;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border-radius: 32px;
+  box-sizing: border-box;
+  padding: 30px;
+  cursor: pointer;
 }
 
 .app__action--encrypt {
@@ -102,56 +102,58 @@
 }
 
 .app__output {
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    text-align: center;
-    border-radius: 32px;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 20px auto;
-    border: none;
-    background-color: #ffffff;
-    box-shadow: 0 10px 10px var(--teal-color);
-    color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  text-align: center;
+  border-radius: 32px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 10px 10px var(--teal-color);
+  color: var(--primary-color);
 }
-
-.app__output-title{
-    font-size: 2rem;
-    color: var(--dark-color);
-    margin-bottom: 1rem;
-    font-weight: 700;
+.app__output-image {
+  display: none;
 }
-.app__output-paragraph{
-    font-size: 1.5rem;
-    color: var(--middle-color);
-    margin-bottom: 1rem;
+.app__output-title {
+  font-size: 2rem;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.app__output-paragraph {
+  font-size: 1.5rem;
+  color: var(--middle-color);
+  margin-bottom: 1rem;
 }
 
 .app__output-text {
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    border-radius: 32px;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 20px auto;
-    border: none;
-    background-color: #ffffff;
-    outline: none;
-    color: var(--primary-color);
-    font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  border-radius: 32px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border: none;
+  background-color: #ffffff;
+  outline: none;
+  color: var(--primary-color);
+  font-size: 2rem;
 }
 
-.app__output-copy-button{
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    width: 100%;    
-    border-radius: 32px;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 20px auto;
-    border: solid 3px var(--primary-color);
-    background-color: #ffffff;
-    outline: none;
+.app__output-copy-button {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  width: 100%;
+  border-radius: 32px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 20px auto;
+  border: solid 3px var(--primary-color);
+  background-color: #ffffff;
+  outline: none;
 }
 
 .hidden-output {
@@ -216,6 +218,9 @@
     height: 20%;
     margin: 0;
   }
+  .app__output-image {
+    display: none;
+  }
   .app__output-title {
     font-size: 2rem;
     color: var(--dark-color);
@@ -243,5 +248,119 @@
     border: solid 3px var(--primary-color);
     background-color: #ffffff;
     outline: none;
+  }
+}
+/*Desktop design*/
+@media (min-width: 1024px) {
+  .app__container {
+    display: grid; 
+    grid-template-columns: 0.5fr 4.1fr 0.2fr 0.6fr; 
+    grid-template-rows: 1fr 1fr 1fr 1.2fr 0.8fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "title title output output"
+      "input input output output"
+      "input input output output"
+      "input input output output"
+      "alert alert output output"
+      "actions actions output output"; 
+  }
+  .app__title {
+    grid-area: title;
+    display: flex;
+    align-self: flex-start;
+    font-size: 2rem;
+    margin: 0;
+    width: 100%;
+  }
+  .app__input-text {
+    grid-area: input;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin: 30px auto;
+    font-size: 1rem;
+  }
+  .app__input-text::placeholder {
+    font-size: 1rem;
+  }
+  .alert__container {
+    grid-area: alert;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .app__actions {
+    grid-area: actions;
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .app__action {
+    width: 100%;
+    height: 25px;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+  }
+  .app__action--encrypt {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    border: solid 3px var(--primary-color);
+  }
+  .app__action--decrypt {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+    border: solid 3px var(--primary-color);
+  }
+  .app__action-text {
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  .app__output {
+    grid-area: output;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .app__output-image {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px auto;
+    padding: 20px;
+  }
+  .app__output-title {
+    font-size: 1rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .app__output-paragraph {
+    font-size: 0.7rem;
+    color: var(--middle-color);
+    margin-bottom: 1rem;
+  }
+  .app__output-text {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+  }
+  .app__output-copy-button {
+    font-size: 2rem;
+    color: var(--primary-color);
+    width: 100%;
+    border-radius: 32px;
+    padding: 20px;
   }
 }
